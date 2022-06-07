@@ -61,8 +61,6 @@ def number_value(data):
 
 
 if __name__ == '__main__':
-    fptr = 'all'
-
     keyword = input()
 
     result = weatherStation(keyword)
