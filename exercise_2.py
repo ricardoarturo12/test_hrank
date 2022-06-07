@@ -27,10 +27,14 @@ def weatherStation(keyword):
 
     filter_active = False
 
+    data ={ ["data"][0]}
+
     for page in range(1, total_pages +1):
         r = requests.get("https://jsonmock.hackerrank.com/api/weather", params={'page':page}).json()
 
         data_page = r["data"]
+
+        print(data_page.filter(keyword))
 
         for data in data_page:
 
@@ -41,6 +45,8 @@ def weatherStation(keyword):
 
             if not filter_active:
                 result_all += data_process(data)
+
+        filter()
 
     return result_all or result_filter
 
